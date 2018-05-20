@@ -12,7 +12,6 @@ body {
 
 header {
   height: $nav_height;
-  border-bottom: 1px solid #ccc;
   @include mobile_l {
     height: auto;
     padding: 15px 0;
@@ -58,7 +57,6 @@ header {
         display: -o-flex;
         display: flex;
         justify-content: flex-end;
-        align-items: flex-start;
         @include mobile_l {
           flex-direction: column;
           justify-content: flex-start;
@@ -93,43 +91,89 @@ header {
         }
         .b-nav__li_category {
           margin-right: 5px;
-            &:hover > a > i {
-              transform: rotate(180deg);
-              color: $nav_color_hover;
-            }
-            &:hover > a {
-              color: $nav_color_hover;
-            }
+          &:hover > a > i {
+            color: $nav_color_hover;
           }
-          .b-nav__ul-child {
-            position: absolute;
-            transform: translateY(25px);
-            visibility: hidden;
-            opacity: 0;
-            width: 215px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            transition: all .2s ease-in-out;
-            .b-nav__list-child {
-              line-height: 40px;
-              a {
-                color: $nav_color;
-                &:hover {
-                  color: $nav_color_hover;
+          &:hover > a {
+            color: $nav_color_hover;
+          }
+          .icon_active {
+            transform: rotate(180deg);
+          }
+        }
+        .b-nav__ul-child {
+          position: absolute;
+          transform: translateY(25px);
+          visibility: hidden;
+          opacity: 0;
+          width: 215px;
+          padding: 10px;
+          border-top: 3px solid $font_alternate;
+          border: 1px solid #ccc;
+          transition: all .2s ease-in-out;
+          z-index: 1;
+          background: #fff;
+          .b-nav__list-child {
+            line-height: 40px;
+            position: relative;
+            a {
+              color: $nav_color;
+              &:hover {
+                color: $nav_color_hover;
+              }
+            }
+            .b-menu {
+              opacity: 0;
+              visibility: hidden;
+              // display: none;
+              top: 0;
+              // right: 105%;
+              right: 110%;
+              width: 750px;
+              z-index: 2;
+              height: auto;
+              padding: 10px;
+              position: absolute;
+              background: #fff;
+              border: 1px solid #e8e8e8;
+              transition: all .2s ease-in-out;
+              .b-menu__li {
+                .b-menu__link {
+                  img {
+                    width: 100%;
+                    height: auto;
+                  }
                 }
               }
             }
-          }
-          .active {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(0);
+            .b-menu_active {
+              opacity: 1;
+              visibility: visible;
+              // display: block;
+              right: 105%;
+            }
           }
         }
-      }
-      .active_menu {
-        left: 0 !important;
+        .active {
+          visibility: visible;
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     }
+    .active_menu {
+      left: 0 !important;
+    }
   }
+}
+
+.b-last-articles {
+  height: 350px;
+  background: #ccc;
+}
+.b-main-content {
+  height: 650px;
+  background: #ccc;
+  .b-main-slider {
+  }
+}

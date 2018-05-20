@@ -14,44 +14,110 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/libs.min.css">
+    <link href="libs/jquery.bxslider/jquery.bxslider.css" rel="stylesheet">
+    <!-- <script src="app/libs/jquery/jquery-1.11.1.min.js"></script> -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="libs/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.b-main-slider').bxSlider({
+                mode: 'horizontal',
+                captions: true,
+                easing: 'easeInOutQuad',
+                controls: false,
+                startSlide: 0,
+                infiniteLoop: true,
+                auto: true,
+                responsive: true,
+                pager: false,
+                pause: 4500,
+                speed: 500,
+                useCSS: true
+            });
+        });
+    </script>
 </head>
 <body>
-    <header>
-        <nav class="b-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="b-nav__logo-block">
-                            <p class="b-nav__logo">Grand Povar</p>
-                            <span class="b-nav__logo-description">Энциклопедия рецептов</span>
-                        </div>
+<header>
+    <nav class="b-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="b-nav__logo-block">
+                        <p class="b-nav__logo">Grand Povar</p>
+                        <span class="b-nav__logo-description">Энциклопедия рецептов</span>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="b-nav__menu-block">
-                        <i class="fa fa-bars"></i>
-                            <ul class="b-nav__ul">
-                                <li class="b-nav__li"><a href="#" class="b-nav__link">Главная</a></li>
-                                <li class="b-nav__li b-nav__li_category">
-                                    <a href="#" class="b-nav__link">
-                                        <span>Категории</span>
-                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                    </a>
-                                    <ul class="b-nav__ul-child">
-                                        <li class="b-nav__list-child"><a href="" class="b-nav__link-child">Cuckoo 1055</a></li>
-                                        <li class="b-nav__list-child"><a href="" class="b-nav__link-child">Мультиварка и не только</a></li>
-                                        <li class="b-nav__list-child"><a href="" class="b-nav__link-child">Supra 5201</a></li>
-                                    </ul>
-                                </li>
-                                <li class="b-nav__li"><a href="#" class="b-nav__link">Об авторе</a></li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="b-nav__menu-block">
+                    <i class="fa fa-bars"></i>
+                        <ul class="b-nav__ul">
+                            <li class="b-nav__li"><a href="#" class="b-nav__link">Главная</a></li>
+                            <li class="b-nav__li b-nav__li_category">
+                                <a href="#" class="b-nav__link">
+                                    <span>Категории</span>
+                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </a>
+                                <ul class="b-nav__ul-child">
+                                    <li class="b-nav__list-child"><a href="" class="b-nav__link-child">Cuckoo 1055</a>
+                                        <ul class="b-menu">
+                                            <div class="row">
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/deserty.jpg" alt=""></a></li>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="b-nav__list-child"><a href="" class="b-nav__link-child">Мультиварка и не только</a>
+                                        <ul class="b-menu">
+                                            <div class="row">
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            <li class="col col-4 b-menu__li"><a href="" class="b-menu__link"><img src="img/category/1055/myaso.jpg" alt=""></a></li>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="b-nav__list-child"><a href="" class="b-nav__link-child">Supra 5201</a></li>
+                                </ul>
+                            </li>
+                            <li class="b-nav__li"><a href="#" class="b-nav__link">Об авторе</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </nav>
-    </header>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+    <div class="col-md-4">
+        <div class="b-last-articles"></div>
+    </div>
+    <div class="col-md-8">
+        <div class="b-main-content">
+            <ul class="b-main-slider">
+                <li><img src="img/category/1055/deserty.jpg" alt=""></li>
+                <li><img src="img/category/1055/deserty.jpg" alt=""></li>
+                <li><img src="img/category/1055/deserty.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
 <script src="libs/main-min.js"></script>
 </body>
 </html>
