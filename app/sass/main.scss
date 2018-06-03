@@ -23,7 +23,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 6;
   transition: all $seconds ease-in-out;
   &__wrapper {
     width: 640px;
@@ -120,13 +120,16 @@ header {
           width: 100%;
           background: #fff;
           transition: all .2s ease-in-out;
+          text-align: left;
+          z-index: 5;
         }
         .b-nav__li {
           line-height: 85px;
           position: relative;
           @include mobile_l {
             display: block;
-            line-height: 45px;
+            width: 100%;
+            line-height: 25px;
           }
           .b-nav__link {
             color: $nav_color;
@@ -135,6 +138,9 @@ header {
             display: block;
             transition: all $seconds ease-in-out;
             line-height: 85px;
+            @include mobile_l {
+              line-height: 45px;
+            }
             &:hover {
               color: $nav_color_hover;
             }
@@ -143,6 +149,10 @@ header {
             cursor: pointer;
             color: $nav_color;
             transition: all $seconds ease-in-out;
+            @include mobile_l {
+              line-height: 45px;
+              padding: 0 15px;
+            }
             &:hover {
               color: $nav_color_hover;
             }
@@ -153,10 +163,10 @@ header {
           }
         }
         .b-nav__li_category {
-          &:hover > a > i {
+          &:hover > p > i {
             color: $nav_color_hover;
           }
-          &:hover > a {
+          &:hover > p {
             color: $nav_color_hover;
           }
           .icon_active {
@@ -175,13 +185,20 @@ header {
           transition: all $seconds ease-in-out;
           z-index: 1;
           background: #fff;
+          @include mobile_l {
+            width: 100%;
+          }
           .b-nav__list-child {
             line-height: 40px;
             position: relative;
             .b-nav__link-child {
               color: $nav_color;
+              cursor: pointer;
               display: block;
               transition: all $seconds ease-in-out;
+              @include mobile_l {
+                padding: 0 20px;
+              }
               &:before {
                 opacity: 0;
                 content: "";
@@ -256,6 +273,7 @@ header {
     background: #fff;
     margin-top: 10px;
     .b-l-article {
+      box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.25);
       margin: 10px 0;
       &__img {
         width: 100%;
@@ -268,8 +286,32 @@ header {
   }
 }
 .b-main-content {
-  height: 650px;
-  background: #ccc;
   .b-main-slider {
+  }
+  .b-main-popular {
+    &__header {
+      margin-top: 20px;
+      padding: 0 10px;
+      background: $nav_color_hover;
+      line-height: $nav_lh;
+      color: #fff;
+    }
+    &__content {
+      margin-top: 10px;
+      .b-popular-article {
+        width: 97%;
+        margin: 3px auto;
+        box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.25);
+        a{
+          .b-popular-article__img {
+            width: 100%;
+          }
+          .b-popular-article__description {
+            min-height: 60px;
+            padding: 10px;
+          }
+        }
+      }
+    }
   }
 }
