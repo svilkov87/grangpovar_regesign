@@ -17,4 +17,6 @@ if (empty($_GET['route']) || $_GET['route'] == 'home') {
     die();
 }
 
+?>
+
 

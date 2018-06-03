@@ -4,10 +4,62 @@
 @import 'base/reset';
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  // font-family: 'Roboto', sans-serif;
+  // font-family: 'Oswald', sans-serif;
   a {
     text-decoration: none !important;
   }
+}
+
+.b-search {
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  transition: all $seconds ease-in-out;
+  &__wrapper {
+    width: 640px;
+    margin: 10% auto;
+    padding: 5px;
+    @include mobile_l {
+      width: 100%;
+      margin: 50% auto;
+    }
+  }
+  &__form {
+    position: relative;
+  }
+  .fa-times {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    cursor: pointer;
+    @include mobile_l {
+      right: 0;
+    }
+  }
+  &__input {
+    border: none;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid;
+    width: 100%;
+    height: 60px;
+    padding: 5px 10px;
+  }
+}
+
+.b-search_active {
+  opacity: 1;
+  visibility: visible;
 }
 
 header {
@@ -77,20 +129,30 @@ header {
             line-height: 45px;
           }
           .b-nav__link {
-            padding: 0 15px;
             color: $nav_color;
-            transition: all .2s ease-in-out;
+            padding: 0 15px;
+            color: #000;
+            display: block;
+            transition: all $seconds ease-in-out;
+            line-height: 85px;
+            &:hover {
+              color: $nav_color_hover;
+            }
+          }
+          .fa-search {
+            cursor: pointer;
+            color: $nav_color;
+            transition: all $seconds ease-in-out;
             &:hover {
               color: $nav_color_hover;
             }
           }
           i {
             color: $nav_color;
-            transition: all .2s ease-in-out;
+            transition: all $seconds ease-in-out;
           }
         }
         .b-nav__li_category {
-          margin-right: 5px;
           &:hover > a > i {
             color: $nav_color_hover;
           }
@@ -103,39 +165,57 @@ header {
         }
         .b-nav__ul-child {
           position: absolute;
+          right: 0;
           transform: translateY(25px);
           visibility: hidden;
           opacity: 0;
           width: 215px;
           padding: 10px;
-          border-top: 3px solid $font_alternate;
-          border: 1px solid #ccc;
-          transition: all .2s ease-in-out;
+          box-shadow: $menu_shadow;
+          transition: all $seconds ease-in-out;
           z-index: 1;
           background: #fff;
           .b-nav__list-child {
             line-height: 40px;
             position: relative;
-            a {
+            .b-nav__link-child {
               color: $nav_color;
+              display: block;
+              transition: all $seconds ease-in-out;
+              &:before {
+                opacity: 0;
+                content: "";
+                background: #000;
+                border-radius: 50%;
+                width: 5px;
+                height: 5px;
+                top: 17px;
+                transition: all $seconds ease-in-out;
+              }
               &:hover {
                 color: $nav_color_hover;
+                padding-left: 10px;
+              }
+              &:hover::before {
+                opacity: 1;
+                position: absolute;
+                top: 17px;
+                left: 0;
               }
             }
             .b-menu {
               opacity: 0;
               visibility: hidden;
+              box-shadow: $menu_shadow;
               // display: none;
-              top: 0;
-              // right: 105%;
-              right: 110%;
+              top: -11px;
+              right: 105%;
               width: 750px;
               z-index: 2;
               height: auto;
               padding: 10px;
               position: absolute;
               background: #fff;
-              border: 1px solid #e8e8e8;
               transition: all .2s ease-in-out;
               .b-menu__li {
                 .b-menu__link {
@@ -149,8 +229,6 @@ header {
             .b-menu_active {
               opacity: 1;
               visibility: visible;
-              // display: block;
-              right: 105%;
             }
           }
         }
@@ -168,8 +246,26 @@ header {
 }
 
 .b-last-articles {
-  height: 350px;
-  background: #ccc;
+  &__header {
+    padding: 0 10px;
+    background: $nav_color_hover;
+    line-height: $nav_lh;
+    color: #fff;
+  }
+  &__content {
+    background: #fff;
+    margin-top: 10px;
+    .b-l-article {
+      margin: 10px 0;
+      &__img {
+        width: 100%;
+      }
+      &__description {
+        line-height: $nav_lh;
+        padding: 0 10px;
+      }
+    }
+  }
 }
 .b-main-content {
   height: 650px;

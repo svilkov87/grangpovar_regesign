@@ -4,7 +4,8 @@ $( document ).ready( function() {
 
     var $mainBurger   = $('.b-nav__menu-block').find('.fa-bars');
     var $categoryMenu = $('.b-nav__list-child');
-
+    var $search       = $('.b-nav__li').find('.fa-search');
+    var $close_search = $('.b-search').find('.fa-times');
 
     $mainBurger.on('click', function() {
 
@@ -29,5 +30,17 @@ $( document ).ready( function() {
             $( this ).find('.b-menu').removeClass('b-menu_active');
         }
     );
+
+    $search.on('click', function() {
+
+        $('.b-search').addClass('b-search_active');
+
+    } );
+
+    $close_search.on( 'click', function() {
+
+        $('.b-search').removeClass('b-search_active');
+
+    } );
 
 } );
